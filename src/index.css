@@ -5,6 +5,7 @@
 :root {
   --bg-opacity: 1;
   --bg-color: rgb(15 23 42/var(--bg-opacity));
+  --color-primary: rgb(14 165 233 / 1);
   
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
@@ -14,4 +15,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Hide the default number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
