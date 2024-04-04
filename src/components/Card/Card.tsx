@@ -1,18 +1,32 @@
-import type { Card as CardType } from '@tsTypes/Card'
+import { Card as CardType } from '@tsTypes/Card'
 
 interface Props {
   config: CardType
 }
 export const Card = ({ config }: Props) => {
+  const {
+    boxShadowHorizontal,
+    boxShadowVertical,
+    boxShadowBlur,
+    boxShadowSpread,
+    backgroundColor,
+    borderColor,
+    borderWidth,
+    borderRadius,
+    boxShadowColor
+  } = config
+
+  const boxShadow = `${boxShadowHorizontal}px ${boxShadowVertical}px ${boxShadowBlur}px ${boxShadowSpread}px ${boxShadowColor}`
+
   return (
     <div
-      className='rounded-2xl h-fit min-w-[320px] p-6 text-gray-500 border flex flex-col justify-between' style={
+      className='rounded-2xl h-fit min-w-[250px] w-full  xl:max-w-[650px] p-6 text-gray-500 border flex flex-col justify-between' style={
       {
-        boxShadow: config.boxShadow?.concat(' rgba(0,0,0,0.1)'),
-        backgroundColor: config.backgroundColor ?? '#FFF',
-        borderColor: config.borderColor,
-        borderWidth: config.borderWidth,
-        borderRadius: config.borderRadius.toString().concat('px')
+        boxShadow,
+        backgroundColor,
+        borderColor,
+        borderWidth,
+        borderRadius: borderRadius.toString().concat('px')
       }
     }
     >

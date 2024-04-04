@@ -8,4 +8,5 @@ export interface InputProps {
   className?: string
   min?: number
   max?: number
+  readOnly?: boolean
 }

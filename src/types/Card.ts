@@ -1,7 +1,11 @@
 export interface Card {
-  boxShadow: string
+  boxShadowHorizontal: string
+  boxShadowVertical: string
+  boxShadowBlur: string
+  boxShadowSpread: string
+  boxShadowColor: string
   backgroundColor: string
   borderColor: string
   borderWidth: string
-  borderRadius: number
+  borderRadius: string
 }

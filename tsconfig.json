@@ -22,7 +22,8 @@
     "baseUrl": "./src",
     "paths": {
      "@components/*": ["components/*"],
-     "@tsTypes/*": ["types/*"]
+     "@tsTypes/*": ["types/*"],
+     "@consts/*": ["consts/*"]
     },
   },
   "include": ["src"],
