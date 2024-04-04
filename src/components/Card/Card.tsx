@@ -1,9 +1,11 @@
+import clsx from 'clsx'
 import { Card as CardType } from '@tsTypes/Card'
 
 interface Props {
   config: CardType
+  showTailwindClasses?: boolean
 }
-export const Card = ({ config }: Props) => {
+export const Card = ({ config, showTailwindClasses = false }: Props) => {
   const {
     boxShadowHorizontal,
     boxShadowVertical,
@@ -18,17 +20,26 @@ export const Card = ({ config }: Props) => {
 
   const boxShadow = `${boxShadowHorizontal}px ${boxShadowVertical}px ${boxShadowBlur}px ${boxShadowSpread}px ${boxShadowColor}`
 
-  return (
-    <div
-      className='rounded-2xl h-fit min-w-[250px] w-full  xl:max-w-[650px] p-6 text-gray-500 border flex flex-col justify-between' style={
-      {
+  const cardStyle = !showTailwindClasses
+    ? {
         boxShadow,
         backgroundColor,
         borderColor,
         borderWidth,
         borderRadius: borderRadius.toString().concat('px')
       }
-    }
+    : {}
+
+  const tailwindClasses = `shadow-[${boxShadowHorizontal}px_${boxShadowVertical}px_${boxShadowBlur}px_${boxShadowSpread}px_${boxShadowColor}] bg-[${backgroundColor}] border-[${borderColor}] border-[${borderWidth}] rounded-[${borderRadius}px]`
+
+  return (
+    <div
+      className={clsx(
+        'h-fit min-w-[250px] w-full xl:max-w-[650px] p-6 text-gray-500 border flex flex-col justify-between',
+        {
+          [tailwindClasses]: showTailwindClasses
+        }
+      )} style={cardStyle}
     >
       <header>
         <h2 className='text-gray-700 font-bold text-xl'>Card Title</h2>
