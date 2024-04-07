@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --bg-opacity: 1;
-  --bg-color: rgb(15 23 42/var(--bg-opacity));
+  --bg-color: #0F172A;
+  --bg-color-light: #F7F7F7;
   --color-primary: rgb(14 165 233 / 1);
+  --color-black: #334155;
   
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
-  background-color: var(--bg-color);
+  /* color-scheme: light dark; */
+  /* background-color: var(--bg-color); */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,5 +40,3 @@ dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1.5px);
 }
-
-

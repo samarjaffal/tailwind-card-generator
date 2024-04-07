@@ -4,10 +4,12 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}'
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {
-        'theme-white': '#F7F7F7'
+        'theme-white': '#F7F7F7',
+        'theme-black': '#0F172A'
       },
       gridTemplateRows: {
         layout: '4rem 1fr 4rem'
