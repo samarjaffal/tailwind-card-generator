@@ -1,8 +1,10 @@
+import { BsFillHeartFill } from 'react-icons/bs'
 import { Card } from '@components/card/Card'
 import { CardConfiguration } from '@components/card-configuration/CardConfiguration'
 import { Dialog } from '@components/dialog/Dialog'
 import { initCard } from '@consts/Card'
 import { useRef, useState } from 'react'
+import { VscGithubInverted } from 'react-icons/vsc'
 import ReactDOMServer from 'react-dom/server'
 import type { Card as CardType } from '@tsTypes/Card'
 
@@ -31,7 +33,10 @@ function App () {
         <h1 className='text-2xl font-bold'>
           Tailwind Card Generator
         </h1>
-        <div>
+        <div className='flex items-center gap-4'>
+          <a href='https://github.com/samarjaffal/tailwind-card-generator' target='_blank' rel='noreferrer'>
+            <VscGithubInverted size={28} className='hover:text-sky-500 transition duration-300' />
+          </a>
           <button className='bg-sky-500 text-white font-bold py-2 px-4 rounded hover:bg-sky-400 transition duration-300' onClick={showCode}>
             Show Code
           </button>
@@ -57,7 +62,7 @@ function App () {
       </Dialog>
 
       <footer className='flex justify-center p-6 border-t border-gray-600'>
-        <small>With a lot of ❤️ by Samar Jaffal</small>
+        <p className='flex items-center gap-x-2'>With a lot of <span><BsFillHeartFill className='text-pink-600' /></span> <a href='https://github.com/samarjaffal' target='_blank' rel='noreferrer' className='hover:text-sky-500 transition duration-300 underline'>Samar Jaffal</a></p>
       </footer>
     </div>
   )
