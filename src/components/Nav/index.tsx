@@ -19,7 +19,7 @@ export const Nav = ({ config }: { config: CardType }) => {
 
   return (
     <>
-      <nav className='flex flex-col md:flex-row justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-600'>
+      <nav className='flex flex-col gap-y-3 md:gap-y-o md:flex-row justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-600'>
         <h1 className='text-2xl font-bold'>
           Tailwind Card Generator
         </h1>
