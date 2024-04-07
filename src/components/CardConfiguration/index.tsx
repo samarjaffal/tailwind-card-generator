@@ -1,5 +1,5 @@
-import { FormInput } from '@components/form-input/FormInput'
-import { FormInputRange } from '@components/form-input-range/FormInputRange'
+import { FormInput } from '@components/FormInput'
+import { FormInputRange } from '@components/FormInputRange'
 import { MAX_BLUR_RANGE, MAX_INPUT_RANGE, MIN_BLUR_RANGE, MIN_INPUT_RANGE } from '@consts/Card'
 import type { Card as CardType } from '@tsTypes/Card'
 

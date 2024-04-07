@@ -1,5 +1,5 @@
 import { InputProps } from '@tsTypes/Input'
-import { Input } from '@components/input/Input'
+import { Input } from '@components/Input'
 
 export const FormInputRange = ({ title, name, value, onChange, min = 0, max = 100 }: InputProps) => {
   return (
