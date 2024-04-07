@@ -28,8 +28,8 @@ function App () {
   }
 
   return (
-    <div className='grid grid-rows-layout h-screen'>
-      <div className='flex justify-between px-4 py-4 border-b border-gray-600'>
+    <div className='grid grid-cols-1 lg:grid-rows-layout h-screen'>
+      <div className='flex flex-col md:flex-row justify-between px-4 py-4 border-b border-gray-600'>
         <h1 className='text-2xl font-bold'>
           Tailwind Card Generator
         </h1>
@@ -44,10 +44,10 @@ function App () {
       </div>
 
       {/* Card generator */}
-      <main className='grid grid-cols-1 xl:grid-cols-body  px-6 h-full overflow-auto xl:overflow-hidden'>
+      <main className='block xl:grid xl:grid-cols-body px-6 h-full overflow-visible xl:overflow-hidden mb-4 xl:mb-0'>
         <CardConfiguration config={config} onChangeConfig={onChangeConfig} />
-        <div className='py-10 mx-auto w-full'>
-          <div className='flex justify-center items-center px-20 py-6 bg-theme-white rounded-xl mt-12 xl:mt-0 h-full'>
+        <div className='py-0 xl:py-10 mx-auto w-full'>
+          <div className='flex justify-center items-center px-20 py-6 bg-theme-white rounded-xl mt-4 xl:mt-0 h-full'>
             <Card config={config} />
           </div>
         </div>
