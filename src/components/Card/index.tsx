@@ -5,6 +5,13 @@ interface Props {
   config: CardType
   showTailwindClasses?: boolean
 }
+/**
+ * Generates the JSX for a Card component based on the provided configuration.
+ *
+ * @param {Props} config - The configuration object for the Card component.
+ * @param {boolean} showTailwindClasses - Flag to determine if Tailwind CSS classes should be applied.
+ * @return {JSX.Element} The JSX for the Card component.
+ */
 export const Card = ({ config, showTailwindClasses = false }: Props) => {
   const {
     boxShadowHorizontal,

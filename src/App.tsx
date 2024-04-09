@@ -7,6 +7,11 @@ import { useState } from 'react'
 import type { Card as CardType } from '@tsTypes/Card'
 import { Nav } from '@components/Nav'
 
+/**
+ * React functional component for the main App.
+ *
+ * @return {JSX.Element} The main App component
+ */
 function App () {
   const [config, setConfig] = useState<CardType>(initCard)
 
@@ -33,8 +38,17 @@ function App () {
         </div>
       </main>
 
-      <footer className='flex justify-center p-6 border-t border-gray-200 dark:border-gray-600'>
-        <p className='flex items-center gap-x-2'>With a lot of <span><BsFillHeartFill className='text-pink-600' /></span> <a href='https://github.com/samarjaffal' target='_blank' rel='noreferrer' className='hover:text-sky-500 transition duration-300 underline'>Samar Jaffal</a></p>
+      <footer className='flex justify-center flex-wrap p-6 border-t border-gray-200 dark:border-gray-600 gap-x-3'>
+        <div>
+          <p className='flex items-center gap-x-2'>With a lot of
+            <span><BsFillHeartFill className='text-pink-600' /></span>
+            <a href='https://github.com/samarjaffal' target='_blank' rel='noreferrer' className='hover:text-sky-500 transition duration-300 underline'>Samar Jaffal</a>
+          </p>
+        </div>
+        <span> | </span>
+        <div>
+          <p>Insipred by: <a href='https://box-shadow.dev/' target='_blank' rel='noreferrer' className='hover:text-sky-500 transition duration-300 underline'>Box Shadow Project</a></p>
+        </div>
       </footer>
     </div>
   )

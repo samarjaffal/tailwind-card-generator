@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react'
 
 type Theme = 'light' | 'dark' | 'auto'
+
+/**
+ * A custom hook to manage the theme of the application.
+ *
+ * @return {Object} An object containing the current theme and a function to toggle the theme.
+ */
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>('auto')
+  const [currentTheme, setCurrentTheme] = useState<Theme>('auto')
 
   useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark')
-    } else if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-    }
-  }, [theme])
+    const { classList } = document.documentElement
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'))
-  }
+    classList.toggle('dark', currentTheme === 'dark' || (currentTheme === 'auto' && prefersDarkScheme))
+  }, [currentTheme])
 
-  return { theme, toggleTheme }
+  const toggleTheme = () => setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
+
+  return { theme: currentTheme, toggleTheme }
 }
